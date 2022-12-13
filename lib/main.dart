@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sound/widgets/bottom_bar.dart';
 import 'package:sound/routes/routes.dart';
+import 'package:sound/palette/palette.dart';
 
 void main() {
   runApp(const MyApp());
@@ -49,7 +50,7 @@ class _HomePageState extends State<HomePage>{
     return Scaffold(
 
       bottomNavigationBar:  myBottomBar,
-      backgroundColor: const Color.fromRGBO(23, 27, 31, 1),
+      backgroundColor: PALETTE.backgroud,
       body: Routes(index:index),
     );
   }

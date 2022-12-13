@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sound/palette/palette.dart';
 
 class BottomBar extends StatefulWidget {
   final Function currentIndex;
@@ -24,11 +25,11 @@ class _BottomBarState extends State<BottomBar>{
             widget.currentIndex(index);        
             });
           },
-          backgroundColor: const Color.fromRGBO(23, 27, 31, 1).withOpacity(0.5),
+          backgroundColor: PALETTE.backgroud,
           showSelectedLabels: false,
           showUnselectedLabels: false,
           selectedItemColor: Colors.white,
-          unselectedItemColor: const Color.fromRGBO(153,156,165,1),
+          unselectedItemColor: PALETTE.unSelected,
           items: const [
             BottomNavigationBarItem(icon: Icon(Icons.home_outlined), 
             label: "Home", 
