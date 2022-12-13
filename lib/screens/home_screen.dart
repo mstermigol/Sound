@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+// TODO: Create the carrousel of recently played songs
+// TODO: Create a scrollable list of all songs
 
 class HomeScreen extends StatelessWidget{
   const HomeScreen({super.key});
@@ -26,7 +28,7 @@ class HomeScreen extends StatelessWidget{
             const Text("Home", style: TextStyle(
               fontSize: 25.0,
               color: Colors.white,
-              fontFamily: "roboto"
+              fontWeight: FontWeight.w400
             ), ),
             IconButton(
               color: Colors.white,
