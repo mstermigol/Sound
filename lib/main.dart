@@ -12,10 +12,13 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return  MaterialApp(
       title: 'Sound',
+      theme: ThemeData(
+        fontFamily: 'SourceCodePro'
+      ),
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      home: const HomePage(),
     );
   }
 }
@@ -44,6 +47,7 @@ class _HomePageState extends State<HomePage>{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       bottomNavigationBar:  myBottomBar,
       backgroundColor: const Color.fromRGBO(23, 27, 31, 1),
       body: Routes(index:index),
