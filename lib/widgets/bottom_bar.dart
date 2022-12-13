@@ -15,6 +15,7 @@ class _BottomBarState extends State<BottomBar>{
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
+          iconSize: 30.0,
           type: BottomNavigationBarType.fixed,
           currentIndex: _currentIndex,
           onTap: (int index){
@@ -31,7 +32,8 @@ class _BottomBarState extends State<BottomBar>{
           items: const [
             BottomNavigationBarItem(icon: Icon(Icons.home_outlined), 
             label: "Home", 
-            activeIcon: Icon(Icons.home_filled)),
+            activeIcon: Icon(Icons.home_filled),
+            ),
             BottomNavigationBarItem(icon: Icon(Icons.download_outlined), 
             label: "Download", 
             activeIcon: Icon(Icons.download)),
