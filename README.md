@@ -1,4 +1,4 @@
-# :musical_note: sound
+# :musical_note: SOUND
 
 Description:
 
