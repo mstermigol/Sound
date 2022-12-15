@@ -13,32 +13,7 @@ class HomeScreen extends StatelessWidget{
           const SizedBox(
             height: 20.0,
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              IconButton(
-              iconSize: 30.0,
-              color: Colors.white,
-              icon: const Icon(Icons.account_circle_outlined),
-              tooltip: "User",
-              onPressed: () {},
-            ),
-            const Text("Home", style: TextStyle(
-              fontSize: 25.0,
-              color: Colors.white,
-              fontWeight: FontWeight.w400
-            ), ),
-            IconButton(
-              color: Colors.white,
-              iconSize: 30.0,
-              icon: const Icon(Icons.settings_outlined),
-              tooltip: "Configuration",
-              onPressed: () {}),
-            ],
-            ),
-          ),
+          const TopHome(),
           Expanded(child: Container())
           ],
         ),
@@ -47,6 +22,42 @@ class HomeScreen extends StatelessWidget{
 
 
 
+}
+
+class TopHome extends StatelessWidget {
+  const TopHome({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 10.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        IconButton(
+        iconSize: 30.0,
+        color: Colors.white,
+        icon: const Icon(Icons.account_circle_outlined),
+        tooltip: "User",
+        onPressed: () {},
+      ),
+      const Text("Home", style: TextStyle(
+        fontSize: 25.0,
+        color: Colors.white,
+        fontWeight: FontWeight.w400
+      ), ),
+      IconButton(
+        color: Colors.white,
+        iconSize: 30.0,
+        icon: const Icon(Icons.settings_outlined),
+        tooltip: "Configuration",
+        onPressed: () {}),
+      ],
+      ),
+    );
+  }
 }
 
 
