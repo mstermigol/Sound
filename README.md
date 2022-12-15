@@ -18,7 +18,7 @@ Instructions:
 
 ### Contributors:
 
-- Miguel Jaramillo :musical_score:
+- Miguel Jaramillo Arenas :musical_score:
 
 ### Known Issues:
 
