@@ -1,6 +1,9 @@
+// ignore_for_file: library_private_types_in_public_api
+
 import 'package:flutter/material.dart';
-import 'package:sound/widgets/bottom_bar.dart';
-import 'package:sound/routes/routes.dart';
+import 'package:sound/screens/home_screen.dart';
+import 'package:sound/screens/pag2.dart';
+import 'package:sound/screens/pag3.dart';
 import 'package:sound/palette/palette.dart';
 
 void main() {
@@ -10,50 +13,94 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return  MaterialApp(
+    return MaterialApp(
       title: 'Sound',
       theme: ThemeData(
         fontFamily: 'SourceCodePro'
       ),
       debugShowCheckedModeBanner: false,
-      home: const HomePage(),
+      home: const MyHomePage(),
+      routes: {
+        '/main': (context) => const HomeScreen(),
+        '/download': (context) => const Pag2(),
+        '/playlist': (context) => const Pag3(),
+      },
     );
   }
 }
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();   
+  _MyHomePageState createState() => _MyHomePageState();
 }
 
-class _HomePageState extends State<HomePage>{
-  int index = 0;
-  BottomBar ?myBottomBar;
-
-  @override
-  void initState(){
-    myBottomBar = BottomBar(currentIndex: (index){
-      setState(() {
-        this.index = index;
-      });
-    });
-    super.initState();
-  }
+class _MyHomePageState extends State<MyHomePage> {
+  int _selectedIndex = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
-      bottomNavigationBar:  myBottomBar,
-      backgroundColor: PALETTE.backgroud,
-      body: Routes(index:index),
+      body: IndexedStack(
+        index: _selectedIndex,
+        children: [
+          Navigator(
+            onGenerateRoute: (settings) {
+              return MaterialPageRoute(
+                builder: (context) => const HomeScreen(),
+                settings: settings,
+              );
+            },
+          ),
+          Navigator(
+            onGenerateRoute: (settings) {
+              return MaterialPageRoute(
+                builder: (context) => const Pag2(),
+                settings: settings,
+              );
+            },
+          ),
+          Navigator(
+            onGenerateRoute: (settings) {
+              return MaterialPageRoute(
+                builder: (context) => const Pag3(),
+                settings: settings,
+              );
+            },
+          ),
+        ],
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+          iconSize: 30.0,
+          type: BottomNavigationBarType.fixed,
+          currentIndex: _selectedIndex,
+          onTap: (int index){
+            setState(() {
+              _selectedIndex = index;       
+            });
+          },
+          backgroundColor: PALETTE.backgroud,
+          showSelectedLabels: false,
+          showUnselectedLabels: false,
+          selectedItemColor: Colors.white,
+          unselectedItemColor: PALETTE.unSelected,
+          items: const [
+            BottomNavigationBarItem(icon: Icon(Icons.home_outlined), 
+            label: "Home", 
+            activeIcon: Icon(Icons.home_filled),
+            ),
+            BottomNavigationBarItem(icon: Icon(Icons.download_outlined), 
+            label: "Download", 
+            activeIcon: Icon(Icons.download)),
+            BottomNavigationBarItem(icon: Icon(Icons.library_music_outlined), 
+            label: "Playlists", 
+            activeIcon: Icon(Icons.library_music)),
+          ],
+        ),
     );
   }
 }
-  
 
