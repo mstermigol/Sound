@@ -22,7 +22,7 @@ class HomeScreen extends StatelessWidget{
             height: 200.0,
           ),
           Padding(
-      padding: EdgeInsets.only(left: 20.0),
+      padding: EdgeInsets.only(left: 10.0),
       child: Text("Song ", style: TextStyle(
                 fontSize: 20.0,
                 color: PALETTE.blanco,
@@ -86,7 +86,7 @@ class RecentlyPlayed extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Padding(
-      padding: EdgeInsets.only(left: 20.0),
+      padding: EdgeInsets.only(left: 10.0),
       child: Text("Recently Played", style: TextStyle(
                 fontSize: 20.0,
                 color: PALETTE.blanco,
