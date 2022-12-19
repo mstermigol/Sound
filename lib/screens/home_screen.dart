@@ -51,8 +51,6 @@ class TopHome extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      toolbarOpacity: 0.0,
-      bottomOpacity: 0.0,
       elevation: 0.0,
       centerTitle: true,
       backgroundColor: Colors.transparent,
