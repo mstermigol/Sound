@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: const MyHomePage(),
       routes: {
-        '/main': (context) => const HomeScreen(),
+        '/home': (context) => const HomeScreen(),
         '/download': (context) => const Pag2(),
         '/playlist': (context) => const Pag3(),
       },
@@ -45,8 +45,9 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: IndexedStack(
+        sizing: StackFit.expand,
         index: _selectedIndex,
-        children: [
+        children:[
           Navigator(
             onGenerateRoute: (settings) {
               return MaterialPageRoute(
@@ -82,10 +83,10 @@ class _MyHomePageState extends State<MyHomePage> {
               _selectedIndex = index;       
             });
           },
-          backgroundColor: PALETTE.backgroud,
+          backgroundColor: PALETTE.backgroud.withOpacity(0.5),
           showSelectedLabels: false,
           showUnselectedLabels: false,
-          selectedItemColor: Colors.white,
+          selectedItemColor: PALETTE.blanco,
           unselectedItemColor: PALETTE.unSelected,
           items: const [
             BottomNavigationBarItem(icon: Icon(Icons.home_outlined), 
