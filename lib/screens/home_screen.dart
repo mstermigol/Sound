@@ -17,10 +17,6 @@ class HomeScreen extends StatelessWidget{
           SizedBox(
             height: 20.0,
           ),
-          TopHome(),
-          SizedBox(
-            height: 20.0,
-          ),
           RecentlyPlayed(),
           SizedBox(
             height: 200.0,
@@ -55,7 +51,12 @@ class TopHome extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-    title:  const Text("Home", style: TextStyle(
+      toolbarOpacity: 0.0,
+      bottomOpacity: 0.0,
+      elevation: 0.0,
+      centerTitle: true,
+      backgroundColor: Colors.transparent,
+      title:  const Text("Home", style: TextStyle(
         fontSize: 30.0,
         color: PALETTE.blanco,
         fontWeight: FontWeight.w400
