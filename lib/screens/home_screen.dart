@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sound/palette/palette.dart';
 // TODO: Create the carrousel of recently played songs
 // TODO: Create a scrollable list of all songs
 
@@ -7,14 +8,33 @@ class HomeScreen extends StatelessWidget{
 
   @override
   Widget build(BuildContext context){
-    return SafeArea(
-      child: Column(
-        children: [
-          const SizedBox(
+    return Scaffold(
+      backgroundColor: PALETTE.backgroud,
+      appBar: const TopHome(),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children:  const [
+          SizedBox(
             height: 20.0,
           ),
-          const TopHome(),
-          Expanded(child: Container())
+          TopHome(),
+          SizedBox(
+            height: 20.0,
+          ),
+          RecentlyPlayed(),
+          SizedBox(
+            height: 200.0,
+          ),
+          Padding(
+      padding: EdgeInsets.only(left: 20.0),
+      child: Text("Song ", style: TextStyle(
+                fontSize: 20.0,
+                color: PALETTE.blanco,
+                fontWeight: FontWeight.w400
+          ),
+      
+      ),)
+
           ],
         ),
     );
@@ -24,40 +44,56 @@ class HomeScreen extends StatelessWidget{
 
 }
 
-class TopHome extends StatelessWidget {
+class TopHome extends StatelessWidget implements PreferredSizeWidget {
   const TopHome({
     Key? key,
   }) : super(key: key);
 
   @override
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
+
+  @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 10.0),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        IconButton(
+    return AppBar(
+    title:  const Text("Home", style: TextStyle(
+        fontSize: 30.0,
+        color: PALETTE.blanco,
+        fontWeight: FontWeight.w400
+      ), ),
+    leading: IconButton(
         iconSize: 30.0,
-        color: Colors.white,
+        color: PALETTE.blanco,
         icon: const Icon(Icons.account_circle_outlined),
         tooltip: "User",
         onPressed: () {},
       ),
-      const Text("Home", style: TextStyle(
-        fontSize: 25.0,
-        color: Colors.white,
-        fontWeight: FontWeight.w400
-      ), ),
-      IconButton(
-        color: Colors.white,
+      actions: [
+        IconButton(
+        color: PALETTE.blanco,
         iconSize: 30.0,
         icon: const Icon(Icons.settings_outlined),
         tooltip: "Configuration",
-        onPressed: () {}),
+        onPressed: () {})
       ],
-      ),
     );
   }
 }
 
+class RecentlyPlayed extends StatelessWidget {
+  const RecentlyPlayed({
+    Key? key,
+  }) : super(key: key);
 
+  @override
+  Widget build(BuildContext context) {
+    return const Padding(
+      padding: EdgeInsets.only(left: 20.0),
+      child: Text("Recently Played", style: TextStyle(
+                fontSize: 20.0,
+                color: PALETTE.blanco,
+                fontWeight: FontWeight.w400
+          ),
+      
+      ),);
+  }
+}
