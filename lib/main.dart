@@ -74,7 +74,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ],
       ),
-      bottomNavigationBar: BottomNavigationBar(
+      floatingActionButton: BottomNavigationBar(
           iconSize: 30.0,
           type: BottomNavigationBarType.fixed,
           currentIndex: _selectedIndex,
@@ -101,6 +101,7 @@ class _MyHomePageState extends State<MyHomePage> {
             activeIcon: Icon(Icons.library_music)),
           ],
         ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
     );
   }
 }
