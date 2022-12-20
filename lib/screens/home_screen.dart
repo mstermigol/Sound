@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sound/palette/palette.dart';
 import 'package:sound/models/song.dart';
+import 'package:sound/widgets/glass_box.dart';
 
 // TODO: Create the carrousel of recently played songs
 // TODO: Create a scrollable list of all songs
@@ -30,8 +31,14 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
           SizedBox(
+            height: 20.0,
+          ),
+          SizedBox(
             height: 200.0,
             child: RecentlyPlayed(),
+          ),
+          SizedBox(
+            height: 20.0,
           ),
           Padding(
             padding: EdgeInsets.only(left: 10.0),
@@ -42,7 +49,10 @@ class HomeScreen extends StatelessWidget {
                   color: PALETTE.blanco,
                   fontWeight: FontWeight.w400),
             ),
-          )
+          ),
+          SizedBox(
+            height: 20.0,
+          ),
         ],
       ),
     );
@@ -114,50 +124,75 @@ class RecentlyPlayedState extends State<RecentlyPlayed> {
         key: _listKey,
         initialItemCount: recentSongs.length,
         itemBuilder: (context, index, animation) {
-          return FadeTransition(
-            opacity: animation,
-            child: SizedBox(
-              width: 200.0,
-              height: 200.0,
-              child: Stack(
-                children: [
-                  Container(
-                    width: 200.0,
-                    height: 200.0,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: recentSongs[index].image.image,
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                  ),
-                  Container(
-                    width: 200.0,
-                    height: 200.0,
-                    decoration: BoxDecoration(
-                      color: Colors.black.withOpacity(0.5),
-                    ),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.end,
+          return Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10.0),
+            child: FadeTransition(
+              opacity: animation,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(20.0),
+                child: SizedBox(
+                  width: 200.0,
+                  child: Stack(
+                      alignment: AlignmentDirectional.bottomEnd,
                       children: [
-                        Text(
-                          recentSongs[index].name,
-                          style: const TextStyle(
-                            color: Colors.white,
-                            fontSize: 20.0,
+                        Container(
+                          width: 200.0,
+                          height: 200.0,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              image: recentSongs[index].image.image,
+                              fit: BoxFit.cover,
+                            ),
                           ),
                         ),
-                        Text(
-                          recentSongs[index].artist,
-                          style: const TextStyle(
-                            color: Colors.white,
-                            fontSize: 16.0,
+                        Container(
+                          width: 200.0,
+                          height: 200.0,
+                          decoration: BoxDecoration(
+                            color: Colors.black.withOpacity(0.5),
                           ),
                         ),
-                      ],
-                    ),
-                  ),
-                ],
+                        Padding(
+                          padding: const EdgeInsets.all(5.0),
+                          child: GlassBox(
+                            height: 50.0,
+                            width: 200.0,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.only(left: 5.0, right: 5.0),
+                                  child: Text(
+                                    overflow: TextOverflow.ellipsis,
+                                    maxLines: 1,
+                                    recentSongs[index].name,
+                                    style: const TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 20.0,
+                                      fontWeight: FontWeight.w400,
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(bottom: 5.0, left: 5.0, right: 5.0),
+                                  child: Text(
+                                    overflow: TextOverflow.ellipsis,
+                                    maxLines: 1,
+                                    recentSongs[index].artist,
+                                    style: const TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 12.0,
+                                      fontWeight: FontWeight.w200,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ]),
+                ),
               ),
             ),
           );
