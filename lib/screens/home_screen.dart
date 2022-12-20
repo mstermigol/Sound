@@ -162,27 +162,27 @@ class RecentlyPlayedState extends State<RecentlyPlayed> {
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
                                 Padding(
-                                  padding: const EdgeInsets.only(left: 5.0, right: 5.0),
+                                  padding: const EdgeInsets.only(left: 10.0, right: 5.0),
                                   child: Text(
                                     overflow: TextOverflow.ellipsis,
                                     maxLines: 1,
                                     recentSongs[index].name,
                                     style: const TextStyle(
                                       color: Colors.white,
-                                      fontSize: 20.0,
+                                      fontSize: 16.0,
                                       fontWeight: FontWeight.w400,
                                     ),
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsets.only(bottom: 5.0, left: 5.0, right: 5.0),
+                                  padding: const EdgeInsets.only(bottom: 5.0, left: 10.0, right: 5.0),
                                   child: Text(
                                     overflow: TextOverflow.ellipsis,
                                     maxLines: 1,
                                     recentSongs[index].artist,
                                     style: const TextStyle(
                                       color: Colors.white,
-                                      fontSize: 12.0,
+                                      fontSize: 10.0,
                                       fontWeight: FontWeight.w200,
                                     ),
                                   ),
