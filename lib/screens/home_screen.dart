@@ -155,7 +155,7 @@ class RecentlyPlayedState extends State<RecentlyPlayed> {
                         Padding(
                           padding: const EdgeInsets.all(5.0),
                           child: GlassBox(
-                            height: 50.0,
+                            height: 45.0,
                             width: 200.0,
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
