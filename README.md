@@ -17,6 +17,11 @@ Sound is a music player that allows you to download music from YouTube and creat
 4. Select the downloaded song in the playlist and press "Play".
 5. Create playlists and add songs to them to organize your music.
 
+## 🔍 Preview
+
+Here is an image of the advances made in the Sound project:
+![WhatsApp Image 2022-12-20 at 4 19 04 PM](https://user-images.githubusercontent.com/85334763/208769165-54d62a6a-1bcf-4ded-9804-d40532c6f493.jpeg)
+
 ## 💻 Contributors
 
 - Miguel Jaramillo Arenas
