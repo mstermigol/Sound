@@ -1,5 +1,3 @@
-// ignore_for_file: library_private_types_in_public_api
-
 import 'package:flutter/material.dart';
 import 'package:sound/screens/home_screen.dart';
 import 'package:sound/screens/pag2.dart';
@@ -35,10 +33,10 @@ class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  MyHomePageState createState() => MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class MyHomePageState extends State<MyHomePage> {
   int _selectedIndex = 0;
 
   @override
@@ -106,3 +104,4 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
+  
