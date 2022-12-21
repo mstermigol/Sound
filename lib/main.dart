@@ -81,7 +81,7 @@ class MyHomePageState extends State<MyHomePage> {
               _selectedIndex = index;       
             });
           },
-          backgroundColor: PALETTE.backgroud.withOpacity(0.5),
+          backgroundColor: PALETTE.backgroud.withOpacity(0.6),
           showSelectedLabels: false,
           showUnselectedLabels: false,
           selectedItemColor: PALETTE.blanco,
