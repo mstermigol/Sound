@@ -85,7 +85,7 @@ List<Song> allSongs = [
     'John Lennon',
     'assets/samples/vistaAlMar.jpg',
   ),
-    Song(
+  Song(
     'Bad Romance',
     'Lady Gaga',
     'assets/samples/holaComoVas.jpg',
@@ -121,9 +121,16 @@ class AllSongs extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: ListView.separated(
-        separatorBuilder: (context, index) => const Divider(),
-        itemCount: allSongs.length,
+        itemCount: allSongs.length + 1,
+        separatorBuilder: (context, index) {
+          return const Divider();
+        },
         itemBuilder: (context, index) {
+          if (index == allSongs.length) {
+            return const SizedBox(
+              height: 50.0,
+            );
+          }
           return Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10.0),
             child: ClipRRect(
@@ -134,35 +141,38 @@ class AllSongs extends StatelessWidget {
                   leading: ClipRRect(
                     borderRadius: BorderRadius.circular(10.0),
                     child: Image.asset(
-                                allSongs[index].image,
-                                fit: BoxFit.cover,
-                                width: 40.0,
-                                height: 40.0,
-                                cacheWidth: 110,
-                                cacheHeight: 110,
-                              ),
+                      allSongs[index].image,
+                      fit: BoxFit.cover,
+                      width: 40.0,
+                      height: 40.0,
+                      cacheWidth: 110,
+                      cacheHeight: 110,
+                    ),
                   ),
                   title: Text(
-                                        overflow: TextOverflow.ellipsis,
-                                        maxLines: 1,
-                                        allSongs[index].name,
-                                        style: const TextStyle(
-                                          color: PALETTE.blanco,
-                                          fontSize: 13.0,
-                                          fontWeight: FontWeight.w400,
-                                        ),
-                                      ),
+                    overflow: TextOverflow.ellipsis,
+                    maxLines: 1,
+                    allSongs[index].name,
+                    style: const TextStyle(
+                      color: PALETTE.blanco,
+                      fontSize: 13.0,
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
                   subtitle: Text(
-                                        overflow: TextOverflow.ellipsis,
-                                        maxLines: 1,
-                                        allSongs[index].artist,
-                                        style: const TextStyle(
-                                          color: PALETTE.blanco,
-                                          fontSize: 10.0,
-                                          fontWeight: FontWeight.w200,
-                                        ),
-                                      ),
-                  trailing: const Icon(Icons.more_vert, color: PALETTE.blanco,),
+                    overflow: TextOverflow.ellipsis,
+                    maxLines: 1,
+                    allSongs[index].artist,
+                    style: const TextStyle(
+                      color: PALETTE.blanco,
+                      fontSize: 10.0,
+                      fontWeight: FontWeight.w200,
+                    ),
+                  ),
+                  trailing: const Icon(
+                    Icons.more_vert,
+                    color: PALETTE.blanco,
+                  ),
                 ),
               ),
             ),
@@ -210,7 +220,6 @@ class TopHome extends StatelessWidget implements PreferredSizeWidget {
     );
   }
 }
-
 
 List<Song> recentSongs = [
   Song("Hola como vas", "Eladio Carrion", ('assets/samples/holaComoVas.jpg')),
