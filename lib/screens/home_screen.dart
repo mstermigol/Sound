@@ -3,7 +3,6 @@ import 'package:sound/palette/palette.dart';
 import 'package:sound/models/song.dart';
 import 'package:sound/widgets/glass_box.dart';
 
-// TODO: Create the carrousel of recently played songs
 // TODO: Create a scrollable list of all songs
 
 class HomeScreen extends StatelessWidget {
@@ -53,7 +52,122 @@ class HomeScreen extends StatelessWidget {
           SizedBox(
             height: 20.0,
           ),
+          AllSongs()
         ],
+      ),
+    );
+  }
+}
+
+List<Song> allSongs = [
+  Song(
+    'Bad Romance',
+    'Lady Gaga',
+    'assets/samples/holaComoVas.jpg',
+  ),
+  Song(
+    'Sweet Child O\' Mine',
+    'Guns N\' Roses',
+    'assets/samples/jumpa.jpg',
+  ),
+  Song(
+    'Bohemian Rhapsody',
+    'Queen',
+    'assets/samples/porDeporte.jpg',
+  ),
+  Song(
+    'Stairway to Heaven',
+    'Led Zeppelin',
+    'assets/samples/sinSenal.jpg',
+  ),
+  Song(
+    'Imagine',
+    'John Lennon',
+    'assets/samples/vistaAlMar.jpg',
+  ),
+    Song(
+    'Bad Romance',
+    'Lady Gaga',
+    'assets/samples/holaComoVas.jpg',
+  ),
+  Song(
+    'Sweet Child O\' Mine',
+    'Guns N\' Roses',
+    'assets/samples/jumpa.jpg',
+  ),
+  Song(
+    'Bohemian Rhapsody',
+    'Queen',
+    'assets/samples/porDeporte.jpg',
+  ),
+  Song(
+    'Stairway to Heaven',
+    'Led Zeppelin',
+    'assets/samples/sinSenal.jpg',
+  ),
+  Song(
+    'Imagine',
+    'John Lennon',
+    'assets/samples/vistaAlMar.jpg',
+  ),
+];
+
+class AllSongs extends StatelessWidget {
+  const AllSongs({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      child: ListView.separated(
+        separatorBuilder: (context, index) => const Divider(),
+        itemCount: allSongs.length,
+        itemBuilder: (context, index) {
+          return Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10.0),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(20.0),
+              child: Container(
+                color: PALETTE.secundary,
+                child: ListTile(
+                  leading: ClipRRect(
+                    borderRadius: BorderRadius.circular(10.0),
+                    child: Image.asset(
+                                allSongs[index].image,
+                                fit: BoxFit.cover,
+                                width: 40.0,
+                                height: 40.0,
+                                cacheWidth: 110,
+                                cacheHeight: 110,
+                              ),
+                  ),
+                  title: Text(
+                                        overflow: TextOverflow.ellipsis,
+                                        maxLines: 1,
+                                        allSongs[index].name,
+                                        style: const TextStyle(
+                                          color: PALETTE.blanco,
+                                          fontSize: 13.0,
+                                          fontWeight: FontWeight.w400,
+                                        ),
+                                      ),
+                  subtitle: Text(
+                                        overflow: TextOverflow.ellipsis,
+                                        maxLines: 1,
+                                        allSongs[index].artist,
+                                        style: const TextStyle(
+                                          color: PALETTE.blanco,
+                                          fontSize: 10.0,
+                                          fontWeight: FontWeight.w200,
+                                        ),
+                                      ),
+                  trailing: const Icon(Icons.more_vert, color: PALETTE.blanco,),
+                ),
+              ),
+            ),
+          );
+        },
       ),
     );
   }
@@ -97,6 +211,15 @@ class TopHome extends StatelessWidget implements PreferredSizeWidget {
   }
 }
 
+
+List<Song> recentSongs = [
+  Song("Hola como vas", "Eladio Carrion", ('assets/samples/holaComoVas.jpg')),
+  Song("Jumpa", "Bad bunny", ('assets/samples/jumpa.jpg')),
+  Song("Por deporte", "Paulo Londra", ('assets/samples/porDeporte.jpg')),
+  Song("Sin señal", "Quevedo", ('assets/samples/sinSenal.jpg')),
+  Song("Vista al mar", "Quevedo", ('assets/samples/vistaAlMar.jpg')),
+];
+
 class RecentlyPlayed extends StatefulWidget {
   const RecentlyPlayed({super.key});
 
@@ -105,16 +228,6 @@ class RecentlyPlayed extends StatefulWidget {
 }
 
 class RecentlyPlayedState extends State<RecentlyPlayed> {
-  final recentSongs = [
-    Song("Hola como vas", "Eladio Carrion",
-        ('assets/samples/holaComoVas.jpg')),
-    Song("Jumpa", "Bad bunny", ('assets/samples/jumpa.jpg')),
-    Song("Por deporte", "Paulo Londra",
-        ('assets/samples/porDeporte.jpg')),
-    Song("Sin señal", "Quevedo", ('assets/samples/sinSenal.jpg')),
-    Song("Vista al mar", "Quevedo",
-        ('assets/samples/vistaAlMar.jpg')),
-  ];
   final GlobalKey<AnimatedListState> _listKey = GlobalKey();
 
   @override
@@ -135,15 +248,13 @@ class RecentlyPlayedState extends State<RecentlyPlayed> {
                   child: Stack(
                       alignment: AlignmentDirectional.bottomEnd,
                       children: [
-                        Container(
+                        Image.asset(
+                          recentSongs[index].image,
+                          fit: BoxFit.cover,
                           width: 200.0,
                           height: 200.0,
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              image: AssetImage(recentSongs[index].image),
-                              fit: BoxFit.cover,
-                            ),
-                          ),
+                          cacheWidth: 525,
+                          cacheHeight: 525,
                         ),
                         Container(
                           width: 200.0,
@@ -162,26 +273,28 @@ class RecentlyPlayedState extends State<RecentlyPlayed> {
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
                                 Padding(
-                                  padding: const EdgeInsets.only(left: 10.0, right: 5.0),
+                                  padding: const EdgeInsets.only(
+                                      left: 10.0, right: 5.0),
                                   child: Text(
                                     overflow: TextOverflow.ellipsis,
                                     maxLines: 1,
                                     recentSongs[index].name,
                                     style: const TextStyle(
-                                      color: Colors.white,
+                                      color: PALETTE.blanco,
                                       fontSize: 16.0,
                                       fontWeight: FontWeight.w400,
                                     ),
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsets.only(bottom: 5.0, left: 10.0, right: 5.0),
+                                  padding: const EdgeInsets.only(
+                                      bottom: 5.0, left: 10.0, right: 5.0),
                                   child: Text(
                                     overflow: TextOverflow.ellipsis,
                                     maxLines: 1,
                                     recentSongs[index].artist,
                                     style: const TextStyle(
-                                      color: Colors.white,
+                                      color: PALETTE.blanco,
                                       fontSize: 10.0,
                                       fontWeight: FontWeight.w200,
                                     ),
