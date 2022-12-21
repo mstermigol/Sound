@@ -107,13 +107,13 @@ class RecentlyPlayed extends StatefulWidget {
 class RecentlyPlayedState extends State<RecentlyPlayed> {
   final recentSongs = [
     Song("Hola como vas", "Eladio Carrion",
-        Image.asset('assets/samples/holaComoVas.jpg')),
-    Song("Jumpa", "Bad bunny", Image.asset('assets/samples/jumpa.jpg')),
+        ('assets/samples/holaComoVas.jpg')),
+    Song("Jumpa", "Bad bunny", ('assets/samples/jumpa.jpg')),
     Song("Por deporte", "Paulo Londra",
-        Image.asset('assets/samples/porDeporte.jpg')),
-    Song("Sin señal", "Quevedo", Image.asset('assets/samples/sinSenal.jpg')),
+        ('assets/samples/porDeporte.jpg')),
+    Song("Sin señal", "Quevedo", ('assets/samples/sinSenal.jpg')),
     Song("Vista al mar", "Quevedo",
-        Image.asset('assets/samples/vistaAlMar.jpg')),
+        ('assets/samples/vistaAlMar.jpg')),
   ];
   final GlobalKey<AnimatedListState> _listKey = GlobalKey();
 
@@ -140,7 +140,7 @@ class RecentlyPlayedState extends State<RecentlyPlayed> {
                           height: 200.0,
                           decoration: BoxDecoration(
                             image: DecorationImage(
-                              image: recentSongs[index].image.image,
+                              image: AssetImage(recentSongs[index].image),
                               fit: BoxFit.cover,
                             ),
                           ),
