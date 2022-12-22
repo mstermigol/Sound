@@ -3,8 +3,6 @@ import 'package:sound/palette/palette.dart';
 import 'package:sound/models/song.dart';
 import 'package:sound/widgets/glass_box.dart';
 
-// TODO: Create a scrollable list of all songs
-
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
