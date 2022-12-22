@@ -99,7 +99,7 @@ class MyHomePageState extends State<MyHomePage> {
             activeIcon: Icon(Icons.library_music)),
           ],
         ),
-        floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 }
