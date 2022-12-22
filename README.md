@@ -20,7 +20,7 @@ Sound is a music player that allows you to download music from YouTube and creat
 ## 🔍 Preview
 
 Here is an image of the advances made in the Sound project:
-![WhatsApp Image 2022-12-21 at 12 52 39 AM](https://user-images.githubusercontent.com/85334763/208831724-2221dd62-57eb-4a0d-9078-3f5ae552fea0.jpeg)
+![WhatsApp Image 2022-12-22 at 4 40 58 PM](https://user-images.githubusercontent.com/85334763/209231013-7c77dde8-75ba-47ad-ab03-d9b82bd8fb27.jpeg)
 
 ## 💻 Contributors
 
