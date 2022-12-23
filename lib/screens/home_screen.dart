@@ -248,70 +248,76 @@ class RecentlyPlayedState extends State<RecentlyPlayed> {
             padding: const EdgeInsets.symmetric(horizontal: 10.0),
             child: FadeTransition(
               opacity: animation,
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(20.0),
-                child: SizedBox(
-                  width: 200.0,
-                  child: Stack(
-                      alignment: AlignmentDirectional.bottomEnd,
-                      children: [
-                        Image.asset(
-                          recentSongs[index].image,
-                          fit: BoxFit.cover,
-                          width: 200.0,
-                          height: 200.0,
-                          cacheWidth: 525,
-                          cacheHeight: 525,
-                        ),
-                        Container(
-                          width: 200.0,
-                          height: 200.0,
-                          decoration: BoxDecoration(
-                            color: Colors.black.withOpacity(0.5),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(5.0),
-                          child: GlassBox(
-                            height: 45.0,
+              child: InkWell(
+                onTap: () {
+                  print("Hola");
+                    
+                },
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(20.0),
+                  child: SizedBox(
+                    width: 200.0,
+                    child: Stack(
+                        alignment: AlignmentDirectional.bottomEnd,
+                        children: [
+                          Image.asset(
+                            recentSongs[index].image,
+                            fit: BoxFit.cover,
                             width: 200.0,
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.only(
-                                      left: 10.0, right: 5.0),
-                                  child: Text(
-                                    overflow: TextOverflow.ellipsis,
-                                    maxLines: 1,
-                                    recentSongs[index].name,
-                                    style: const TextStyle(
-                                      color: PALETTE.blanco,
-                                      fontSize: 16.0,
-                                      fontWeight: FontWeight.w400,
-                                    ),
-                                  ),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.only(
-                                      bottom: 5.0, left: 10.0, right: 5.0),
-                                  child: Text(
-                                    overflow: TextOverflow.ellipsis,
-                                    maxLines: 1,
-                                    recentSongs[index].artist,
-                                    style: const TextStyle(
-                                      color: PALETTE.blanco,
-                                      fontSize: 10.0,
-                                      fontWeight: FontWeight.w200,
-                                    ),
-                                  ),
-                                ),
-                              ],
+                            height: 200.0,
+                            cacheWidth: 525,
+                            cacheHeight: 525,
+                          ),
+                          Container(
+                            width: 200.0,
+                            height: 200.0,
+                            decoration: BoxDecoration(
+                              color: Colors.black.withOpacity(0.5),
                             ),
                           ),
-                        ),
-                      ]),
+                          Padding(
+                            padding: const EdgeInsets.all(5.0),
+                            child: GlassBox(
+                              height: 45.0,
+                              width: 200.0,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.only(
+                                        left: 10.0, right: 5.0),
+                                    child: Text(
+                                      overflow: TextOverflow.ellipsis,
+                                      maxLines: 1,
+                                      recentSongs[index].name,
+                                      style: const TextStyle(
+                                        color: PALETTE.blanco,
+                                        fontSize: 16.0,
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(
+                                        bottom: 5.0, left: 10.0, right: 5.0),
+                                    child: Text(
+                                      overflow: TextOverflow.ellipsis,
+                                      maxLines: 1,
+                                      recentSongs[index].artist,
+                                      style: const TextStyle(
+                                        color: PALETTE.blanco,
+                                        fontSize: 10.0,
+                                        fontWeight: FontWeight.w200,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ]),
+                  ),
                 ),
               ),
             ),
