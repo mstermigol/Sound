@@ -3,6 +3,7 @@ import 'package:sound/screens/home_screen.dart';
 import 'package:sound/screens/pag2.dart';
 import 'package:sound/screens/pag3.dart';
 import 'package:sound/palette/palette.dart';
+import 'package:sound/screens/song_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,7 +20,8 @@ class MyApp extends StatelessWidget {
         fontFamily: 'SourceCodePro'
       ),
       debugShowCheckedModeBanner: false,
-      home: const MyHomePage(),
+      //home: const MyHomePage(),
+      home: const SongScreen(),
       routes: {
         '/home': (context) => const HomeScreen(),
         '/download': (context) => const Pag2(),
