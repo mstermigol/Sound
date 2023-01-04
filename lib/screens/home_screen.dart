@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sound/palette/palette.dart';
 import 'package:sound/models/song.dart';
+import 'package:sound/screens/song_screen.dart';
 import 'package:sound/widgets/glass_box.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -230,13 +231,17 @@ List<Song> recentSongs = [
 class RecentlyPlayed extends StatefulWidget {
   const RecentlyPlayed({super.key});
 
+  
+
   @override
   RecentlyPlayedState createState() => RecentlyPlayedState();
+  
 }
 
 class RecentlyPlayedState extends State<RecentlyPlayed> {
   final GlobalKey<AnimatedListState> _listKey = GlobalKey();
 
+  
   @override
   Widget build(BuildContext context) {
     return AnimatedList(
@@ -249,9 +254,12 @@ class RecentlyPlayedState extends State<RecentlyPlayed> {
             child: FadeTransition(
               opacity: animation,
               child: InkWell(
+                splashColor: Colors.transparent,
+                focusColor: Colors.transparent,
+                hoverColor: Colors.transparent,
+                highlightColor: Colors.transparent,
                 onTap: () {
-                  print("Hola");
-                    
+                  print("hola $index");
                 },
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(20.0),
