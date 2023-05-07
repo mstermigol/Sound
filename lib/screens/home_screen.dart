@@ -231,8 +231,6 @@ List<Song> recentSongs = [
 class RecentlyPlayed extends StatefulWidget {
   const RecentlyPlayed({super.key});
 
-  
-
   @override
   RecentlyPlayedState createState() => RecentlyPlayedState();
   
@@ -254,7 +252,6 @@ class RecentlyPlayedState extends State<RecentlyPlayed> {
             child: FadeTransition(
               opacity: animation,
               child: InkWell(
-                splashColor: Colors.white,
                 onTap: () {
                   print("hola $index");
                 },
