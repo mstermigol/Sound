@@ -1,21 +1,13 @@
 # 🎵 Sound
 
-Sound is a music player that allows you to download music from YouTube and create playlists to organize your music.
+Sound is a music player UI.
 
 ## 🎛️ Features
 
-- Download music from YouTube by entering the URL.
+- Download music.
 - Create and organize playlists.
-- Play music in the background.
-- Compatible with Android devices.
+- View your songs.
 
-## 💡 How to use
-
-1. Download and install the app on your device.
-2. Start the app and select the "Home" option at the bottom of the screen to see all the songs you have.
-3. Select "Download" option at the bottom of the screen then enter the YouTube URL in the search field.
-4. Select the downloaded song in the playlist and press "Play".
-5. Create playlists and add songs to them to organize your music.
 
 ## 🔍 Preview
 
