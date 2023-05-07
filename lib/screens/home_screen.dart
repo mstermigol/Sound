@@ -254,10 +254,7 @@ class RecentlyPlayedState extends State<RecentlyPlayed> {
             child: FadeTransition(
               opacity: animation,
               child: InkWell(
-                splashColor: Colors.transparent,
-                focusColor: Colors.transparent,
-                hoverColor: Colors.transparent,
-                highlightColor: Colors.transparent,
+                splashColor: Colors.white,
                 onTap: () {
                   print("hola $index");
                 },

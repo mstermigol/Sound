@@ -20,8 +20,7 @@ class MyApp extends StatelessWidget {
         fontFamily: 'SourceCodePro'
       ),
       debugShowCheckedModeBanner: false,
-      //home: const MyHomePage(),
-      home: const SongScreen(),
+      home: const MyHomePage(),
       routes: {
         '/home': (context) => const HomeScreen(),
         '/download': (context) => const Pag2(),
