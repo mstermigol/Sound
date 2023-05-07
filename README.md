@@ -4,8 +4,9 @@ Sound is a music player UI.
 
 ## 🎛️ Features
 
-- Download music from YouTube by entering the URL.
+- Download music.
 - Create and organize playlists.
+- View your songs.
 
 
 ## 🔍 Preview
