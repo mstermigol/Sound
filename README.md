@@ -1,6 +1,6 @@
 # 🎵 Sound
 
-Sound is a music player UI.
+Sound is a music player UI made with flutter.
 
 ## 🔍 Preview
 
