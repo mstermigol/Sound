@@ -2,13 +2,6 @@
 
 Sound is a music player UI.
 
-## 🎛️ Features
-
-- Download music.
-- Create and organize playlists.
-- View your songs.
-
-
 ## 🔍 Preview
 
 Here is an image of the advances made in the Sound project:
@@ -17,10 +10,6 @@ Here is an image of the advances made in the Sound project:
 ## 💻 Contributors
 
 - Miguel Jaramillo Arenas
-
-## 📜 License
-
-Sound is distributed under the Noncommercial, No-Derivatives license. This means that you are free to use and distribute the app for non-commercial purposes, but you are not allowed to modify or distribute the source code without permission. For more information, see the license file included in the repository.
 
 ## 📧 Support
 
